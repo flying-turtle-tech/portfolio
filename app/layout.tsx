@@ -4,12 +4,13 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Portfolio | Software Engineer",
   description: "Software Engineer — iOS, AI, and Product Builder",
   keywords: ["software engineer", "iOS", "AI", "React", "Next.js", "portfolio"],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: siteConfig.name }],
   openGraph: {
     title: "Portfolio | Software Engineer",
     description: "Software Engineer — iOS, AI, and Product Builder",

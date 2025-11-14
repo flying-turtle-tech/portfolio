@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { siteConfig } from "@/lib/config";
 
 const skills = [
   {
@@ -60,7 +61,7 @@ export function About() {
                   <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]" />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-2">Your Name</h3>
+                <h3 className="text-2xl font-bold mb-2">{siteConfig.name}</h3>
                 <p className="text-violet-400 mb-4">Software Engineer</p>
                 <p className="text-muted-foreground text-sm">
                   Based in San Francisco, CA

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/config";
 
 export function Hero() {
   return (
@@ -61,7 +62,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Your Name
+              {siteConfig.name}
             </motion.h1>
 
             <motion.p
