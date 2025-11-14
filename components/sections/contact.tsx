@@ -98,7 +98,7 @@ export function Contact() {
                   className="w-full bg-violet-600 hover:bg-violet-700"
                   asChild
                 >
-                  <a href="/resume.pdf" download>
+                  <a href="/resume.pdf" download className="flex flex-row items-center">
                     <FileText size={20} className="mr-2" />
                     Download Resume
                   </a>
