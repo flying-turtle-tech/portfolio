@@ -4,8 +4,32 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
+import { useState, useEffect } from "react";
 
 export function Hero() {
+  const [mounted, setMounted] = useState(false);
+  const [particles, setParticles] = useState<Array<{
+    id: number;
+    left: number;
+    top: number;
+    duration: number;
+    delay: number;
+  }>>([]);
+
+  useEffect(() => {
+    // Generate particles only on client-side after mount
+    setParticles(
+      Array.from({ length: 50 }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        duration: 3 + Math.random() * 2,
+        delay: Math.random() * 2,
+      }))
+    );
+    setMounted(true);
+  }, []);
+
   return (
     <section
       id="home"
@@ -18,22 +42,22 @@ export function Hero() {
 
         {/* Animated particles/dots */}
         <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
+          {mounted && particles.map((particle) => (
             <motion.div
-              key={i}
+              key={particle.id}
               className="absolute w-1 h-1 bg-violet-500/30 rounded-full"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
               }}
               animate={{
                 y: [0, -30, 0],
                 opacity: [0.2, 0.5, 0.2],
               }}
               transition={{
-                duration: 3 + Math.random() * 2,
+                duration: particle.duration,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: particle.delay,
               }}
             />
           ))}
