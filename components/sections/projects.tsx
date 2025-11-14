@@ -116,6 +116,7 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex flex-row items-center"
                       >
                         <Github size={16} className="mr-2" />
                         Code
@@ -130,6 +131,7 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="flex flex-row items-center"
                       >
                         <ExternalLink size={16} className="mr-2" />
                         Demo
