@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/lib/config";
 
 export const runtime = "edge";
 export const alt = "Portfolio | Software Engineer";
@@ -44,7 +45,7 @@ export default async function Image() {
               marginBottom: 20,
             }}
           >
-            Your Name
+            {siteConfig.name}
           </div>
           <div
             style={{
