@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ export function Contact() {
                 <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
                 <div className="space-y-4">
                   <a
-                    href="https://github.com/yourusername"
+                    href={siteConfig.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-violet-400 transition-colors"
@@ -74,7 +75,7 @@ export function Contact() {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href={siteConfig.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-violet-400 transition-colors"
@@ -83,7 +84,7 @@ export function Contact() {
                     <span>LinkedIn</span>
                   </a>
                   <a
-                    href="mailto:your.email@example.com"
+                    href={`mailto:${siteConfig.email}`}
                     className="flex items-center gap-3 text-muted-foreground hover:text-violet-400 transition-colors"
                   >
                     <Mail size={20} />
@@ -146,7 +147,7 @@ export function Contact() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="your.email@example.com"
+                      placeholder="your@email.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
