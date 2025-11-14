@@ -64,7 +64,7 @@ export function About() {
                 <h3 className="text-2xl font-bold mb-2">{siteConfig.name}</h3>
                 <p className="text-violet-400 mb-4">Software Engineer</p>
                 <p className="text-muted-foreground text-sm">
-                  Based in San Francisco, CA
+                  Based in Boston, MA
                 </p>
               </Card>
             </motion.div>

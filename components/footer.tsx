@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,7 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/yourusername"
+              href={siteConfig.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -22,7 +23,7 @@ export function Footer() {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href={siteConfig.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -31,7 +32,7 @@ export function Footer() {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href={`mailto:${siteConfig.email}`}
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email"
             >
